@@ -1,0 +1,40 @@
+External sources
+
+Hospital asset lifecycle and inventory
+- WHO, Inventory and maintenance management information systems for medical devices (2025): https://www.who.int/publications/b/74278
+- WHO PDF: https://iris.who.int/bitstream/handle/10665/381579/9789240111257-eng.pdf?sequence=1
+- WHO, Introduction to medical equipment inventory management: https://www.who.int/publications/i/item/9789241501392
+- Joint Commission medical equipment inventory FAQ: https://www.jointcommission.org/en-us/knowledge-library/support-center/standards-interpretation/standards-faqs/000001209
+- Frontiers in Artificial Intelligence, 9,924-device tertiary-hospital study: https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1791935/full
+
+FDA MAUDE and openFDA
+- FDA MDR data files and limitations: https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems/mdr-data-files
+- FDA MAUDE overview and limitations: https://www.fda.gov/medical-devices/mandatory-reporting-requirements-manufacturers-importers-and-device-user-facilities/about-manufacturer-and-user-facility-device-experience-maude-database
+- openFDA device event overview: https://open.fda.gov/apis/device/event/
+- openFDA device event searchable fields: https://open.fda.gov/apis/device/event/searchable-fields/
+- openFDA device event query syntax: https://open.fda.gov/apis/device/event/how-to-use-the-endpoint/
+- openFDA device recall searchable fields: https://open.fda.gov/apis/device/recall/searchable-fields/
+- openFDA device recall query examples: https://open.fda.gov/apis/device/recall/example-api-queries/
+
+Agent platform and sandbox
+- NVIDIA AI-Q Blueprint repository: https://github.com/NVIDIA-AI-Blueprints/aiq/tree/v2.2.0-rc3
+- NVIDIA AI-Q changelog: https://github.com/NVIDIA-AI-Blueprints/aiq/blob/develop/CHANGELOG.md
+- NVIDIA OpenShell repository: https://github.com/NVIDIA/OpenShell
+
+Local implementation evidence
+- README.md
+- configs/config_aiq_agent.yml
+- configs/openshell-policy.yml
+- src/healthcare_alm/agent/deep_agent.py
+- src/healthcare_alm/agent/domain.py
+- src/healthcare_alm/analysis/scoring.py
+- src/healthcare_alm/analysis/planner.py
+- data/mock_inventory.csv
+- data/mock_maintenance.csv
+- evaluation/agent_queries.json
+- output/evaluations/20260816T092155Z/summary.json
+- output/agent-runs/09e3fa29-ca96-4cfb-a68b-a9065ed778e4/
+- output/agent-runs/06b77a56-9a74-41d8-a403-6f1880e9e6b9/
+
+Generated visual
+- workshop/assets/healthcare_alm_cover.png — generated for this deck with OpenAI image generation on 2026-08-16; no external asset source.

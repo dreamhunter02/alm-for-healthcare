@@ -1,0 +1,9 @@
+Healthcare ALM Workshop Prototype
+Copyright 2026 Healthcare ALM Workshop Contributors
+
+Portions of the database setup, SQL retrieval, plotting, workflow configuration,
+and evaluation structure are adapted from NVIDIA GenerativeAIExamples,
+industries/asset_lifecycle_management_agent, Apache License 2.0.
+
+AI-Q architectural patterns reference NVIDIA-AI-Blueprints/aiq v2.2.0-rc3,
+Apache License 2.0.

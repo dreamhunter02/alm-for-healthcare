@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Medical Device Retirement Command Center</title>
+  <style>
+    :root{--green:#76b900;--ink:#15191d;--muted:#69727b;--paper:#f4f6f7;--red:#c93b32;--amber:#e8a317;--line:#dce1e4}
+    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}
+    header{background:#090b0d;color:#fff;padding:28px clamp(22px,5vw,72px);display:flex;justify-content:space-between;gap:24px;align-items:end}
+    h1{font-size:clamp(25px,3vw,42px);line-height:1.05;margin:5px 0}.eyebrow{color:var(--green);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+    button{border:0;background:var(--green);color:#080a0b;padding:13px 18px;font-weight:800;border-radius:4px;cursor:pointer;min-width:160px}button:disabled{opacity:.55}
+    main{max-width:1420px;margin:auto;padding:26px clamp(18px,4vw,55px) 60px}.notice{background:#fff;border-left:5px solid var(--amber);padding:13px 17px;margin-bottom:20px;color:#474f56}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}.card,.panel{background:#fff;border:1px solid var(--line);box-shadow:0 3px 14px #1f29330a}
+    .card{padding:18px}.metric{font-size:34px;font-weight:850;margin-top:3px}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    nav{display:flex;gap:5px;margin:22px 0 12px}nav button{background:#e3e7e9;color:#394047;min-width:auto;padding:9px 15px}nav button.active{background:#15191d;color:#fff}
+    .panel{padding:20px;display:none}.panel.active{display:block}.grid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}.section-title{font-size:18px;font-weight:800;margin:0 0 15px}
+    table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}th,td{padding:11px 8px;border-bottom:1px solid #edf0f1}
+    .pill{display:inline-block;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:800;text-transform:uppercase}.retire{background:#fde6e4;color:#9c231d}.plan_replacement{background:#fff0cf;color:#845b00}.maintain{background:#e4f4df;color:#28621b}
+    .bar{height:9px;background:#e7eaec;border-radius:10px;overflow:hidden;min-width:120px}.bar span{height:100%;display:block;background:var(--green)}
+    .pipeline{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.stage{border-top:4px solid var(--green);background:#f4f6f7;padding:11px 9px;min-height:90px}.stage b{display:block;font-size:12px}.stage small{color:var(--muted)}
+    .evidence{padding:14px 0;border-bottom:1px solid var(--line)}.evidence h3{margin:0 0 7px}.source{color:#436b00;word-break:break-all}.empty{text-align:center;color:var(--muted);padding:50px}.trace{font-family:ui-monospace,monospace;font-size:12px;word-break:break-all}
+    @media(max-width:900px){.metrics{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr 1fr}header{align-items:start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header>
+    <div><div class="eyebrow">Agents in Healthcare · Workshop Prototype</div><h1>Medical Device Retirement<br>Command Center</h1><div id="status">Cached openFDA mode · ready to run</div></div>
+    <button id="run" onclick="runDemo()">Run 7-agent pipeline</button>
+  </header>
+  <main>
+    <div class="notice"><b>Decision support only.</b> MAUDE reports are public signals—not incidence rates or proof that a hospital asset caused an event. Every recommendation requires clinical-engineering review.</div>
+    <section class="metrics">
+      <div class="card"><div class="label">Fleet assets</div><div class="metric" id="m-assets">—</div></div>
+      <div class="card"><div class="label">Retire now</div><div class="metric" id="m-retire">—</div></div>
+      <div class="card"><div class="label">Current spend</div><div class="metric" id="m-spend">—</div></div>
+      <div class="card"><div class="label">Evidence source</div><div class="metric" style="font-size:22px" id="m-source">openFDA</div></div>
+    </section>
+    <nav><button class="active" data-tab="plan">Retirement plan</button><button data-tab="evidence">Evidence</button><button data-tab="pipeline">Agent pipeline</button><button data-tab="audit">Audit trail</button></nav>
+    <section id="plan" class="panel active"><div class="empty">Run the pipeline to generate the ranked plan.</div></section>
+    <section id="evidence" class="panel"><div class="empty">Evidence appears after a run.</div></section>
+    <section id="pipeline" class="panel"><div class="empty">Stage execution appears after a run.</div></section>
+    <section id="audit" class="panel"><div class="empty">Audit metadata appears after a run.</div></section>
+  </main>
+<script>
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button,.panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active')});
+const money=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(v);
+async function runDemo(){const b=document.getElementById('run');b.disabled=true;b.textContent='Agents working…';document.getElementById('status').textContent='Ingesting → correlating → scoring → grounding → planning → auditing → verifying';
+ try{const run=await fetch('/api/demo/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({budget:120000})});if(!run.ok)throw new Error(await run.text());const [assets,plan,audit]=await Promise.all(['/api/assets','/api/plan','/api/audit'].map(u=>fetch(u).then(r=>r.json())));render(assets,plan,audit);document.getElementById('status').textContent=`Complete · trace ${audit.trace_id.slice(0,12)} · ${audit.sandbox_provider}`}
+ catch(e){document.getElementById('status').textContent='Run failed: '+e.message}finally{b.disabled=false;b.textContent='Run again'}}
+function render(assets,plan,audit){document.getElementById('m-assets').textContent=assets.length;document.getElementById('m-retire').textContent=assets.filter(x=>x.score.action==='retire').length;document.getElementById('m-spend').textContent=money(plan.current_phase_spend);document.getElementById('m-source').textContent=Object.values(audit.fda_provenance).join(' + ');
+ const rows=plan.items.map(i=>`<tr><td><b>${i.asset_id}</b></td><td><div class="bar"><span style="width:${i.risk_score}%"></span></div></td><td>${i.risk_score}</td><td><span class="pill ${i.action}">${i.action.replace('_',' ')}</span></td><td>${i.phase.replace('_',' ')}</td><td>${money(i.estimated_cost)}</td><td>${i.evidence_confidence}</td></tr>`).join('');document.getElementById('plan').innerHTML=`<h2 class="section-title">Budget-aware replacement schedule</h2><table><thead><tr><th>Asset</th><th>Risk</th><th>Score</th><th>Decision</th><th>Phase</th><th>Cost</th><th>Confidence</th></tr></thead><tbody>${rows}</tbody></table>`;
+ document.getElementById('evidence').innerHTML='<h2 class="section-title">Why the agents made each recommendation</h2>'+assets.sort((a,b)=>b.score.total-a.score.total).slice(0,6).map(x=>`<div class="evidence"><h3>${x.asset.asset_id} · ${x.asset.manufacturer} ${x.asset.model_number}</h3><span class="pill ${x.score.action}">${x.score.total} · ${x.score.action.replace('_',' ')}</span> &nbsp; Match: <b>${x.evidence.match_tier.replaceAll('_',' ')}</b> · MAUDE recent/older: ${x.evidence.recent_maude_count}/${x.evidence.older_maude_count} · Recalls: ${x.evidence.recall_records.length}<br><small class="source">${x.evidence.source_urls[0]||'No public URL'}</small></div>`).join('');
+ document.getElementById('pipeline').innerHTML='<h2 class="section-title">Seven explicit, composable stages</h2><div class="pipeline">'+audit.stages.map((s,i)=>`<div class="stage"><b>${i+1}. ${s.stage.replaceAll('_',' ')}</b><small>${s.message}</small></div>`).join('')+'</div>';
+ document.getElementById('audit').innerHTML=`<div class="grid"><div><h2 class="section-title">Trace + verification</h2><p class="trace">${audit.trace_id}</p><table>${audit.stages.map(s=>`<tr><td>${s.stage}</td><td>${s.status}</td><td>${s.input_count} → ${s.output_count}</td></tr>`).join('')}</table></div><div><h2 class="section-title">Execution provenance</h2><p><b>Sandbox</b><br>${audit.sandbox_provider}</p><p><b>FDA sources</b><br>${JSON.stringify(audit.fda_provenance)}</p><p><b>Warnings</b><br>${audit.warnings.join('<br>')||'None'}</p></div></div>`;}
+</script>
+</body>
+</html>
+

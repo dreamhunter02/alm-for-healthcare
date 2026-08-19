@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated.",
+    "last_updated": "2026-08-05",
+    "results": {"skip": 0, "limit": 22, "total": 1827009},
+    "snapshot_note": "Eight broad FRN samples plus fourteen real Zyno Z-800 records from an openFDA date/model query."
+  },
+  "results": [
+    {"mdr_report_key": "10000010", "report_number": "2032227-2020-110177", "date_received": "20200427", "event_type": "Injury", "device": [{"manufacturer_d_name": "MEDTRONIC PUERTO RICO OPERATIONS CO.", "brand_name": "RESERVOIR 3ML MMT-332A", "model_number": "MMT-332A", "device_report_product_code": "FRN"}]},
+    {"mdr_report_key": "10000149", "report_number": "2032227-2020-110243", "date_received": "20200427", "event_type": "Malfunction", "device": [{"manufacturer_d_name": "MEDTRONIC PUERTO RICO OPERATIONS CO.", "brand_name": "RESERVOIR 2PK 3ML MMT-332AT", "model_number": "MMT-332AT", "device_report_product_code": "FRN"}]},
+    {"mdr_report_key": "10000443", "report_number": "1314492-2020-01390", "date_received": "20200427", "event_type": "Malfunction", "device": [{"manufacturer_d_name": "BAXTER HEALTHCARE CORPORATION", "brand_name": "SPECTRUM INFUSION PUMP", "model_number": "NA", "device_report_product_code": "FRN"}]},
+    {"mdr_report_key": "10000445", "report_number": "1314492-2020-01389", "date_received": "20200427", "event_type": "Malfunction", "device": [{"manufacturer_d_name": "BAXTER HEALTHCARE CORPORATION", "brand_name": "SPECTRUM INFUSION PUMP", "model_number": "NA", "device_report_product_code": "FRN"}]},
+    {"mdr_report_key": "10000516", "report_number": "2032227-2020-110308", "date_received": "20200427", "event_type": "Malfunction", "device": [{"manufacturer_d_name": "MEDTRONIC PUERTO RICO OPERATIONS CO.", "brand_name": "RESERVOIR 1.8ML MMT-326A", "model_number": "MMT-326A", "device_report_product_code": "FRN"}]},
+    {"mdr_report_key": "10000566", "report_number": "1314492-2020-01392", "date_received": "20200427", "event_type": "Malfunction", "device": [{"manufacturer_d_name": "BAXTER HEALTHCARE CORPORATION", "brand_name": "SPECTRUM INFUSION PUMP", "model_number": "NA", "device_report_product_code": "FRN"}]},
+    {"mdr_report_key": "10000567", "report_number": "1314492-2020-01391", "date_received": "20200427", "event_type": "Malfunction", "device": [{"manufacturer_d_name": "BAXTER HEALTHCARE CORPORATION", "brand_name": "SPECTRUM INFUSION PUMP", "model_number": "NA", "device_report_product_code": "FRN"}]},
+    {"mdr_report_key": "10000617", "report_number": "1314492-2020-01393", "date_received": "20200427", "event_type": "Malfunction", "device": [{"manufacturer_d_name": "BAXTER HEALTHCARE CORPORATION", "brand_name": "SPECTRUM INFUSION PUMP", "model_number": "NA", "device_report_product_code": "FRN"}]},
+    {"report_number":"3006575795-2025-00016","date_received":"20250121","event_type":"Injury","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"ZYNO MEDICAL Z-800 INFUSION PUMP SYSTEM","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00024","date_received":"20250128","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"ZYNO MEDICAL Z-800 INFUSION PUMP SYSTEM","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00188","date_received":"20250604","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"ZYNO MEDICAL Z-800 INFUSION PUMP SYSTEM","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00229","date_received":"20250708","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"ZYNO MEDICAL Z-800 INFUSION PUMP SYSTEM","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00260","date_received":"20250718","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"ZYNO MEDICAL Z-800 INFUSION PUMP SYSTEM","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00346","date_received":"20250815","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"Z-800","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00347","date_received":"20250818","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"Z-800","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00512","date_received":"20250924","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"Z-800","model_number":"Z-800 INFUSION PUMP","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00520","date_received":"20250925","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"Z-800","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00540","date_received":"20251002","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"Z-800","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00560","date_received":"20251006","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"Z800","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00555","date_received":"20251006","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"Z-800","model_number":"Z-800","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2025-00569","date_received":"20251008","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"Z-800","model_number":"Z-800 INFUSION PUMP","device_report_product_code":"FRN"}]},
+    {"report_number":"3006575795-2026-01192","date_received":"20260527","event_type":"Malfunction","device":[{"manufacturer_d_name":"ZYNO MEDICAL, LLC","brand_name":"Z-800F","model_number":"Z-800 VOLUMETRIC INFUSION SYSTEM","device_report_product_code":"FRN"}]}
+  ]
+}

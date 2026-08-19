@@ -1,0 +1,22 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: healthcare-alm-webui
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      WEBUI_AUTH: "false"
+      WEBUI_NAME: "Healthcare ALM Agent"
+      ENABLE_OLLAMA_API: "false"
+      OPENAI_API_BASE_URLS: "http://host.docker.internal:8000/v1"
+      OPENAI_API_KEYS: "local-aiq"
+      OPENAI_API_CONFIGS: >-
+        {"0":{"enable":true,"model_ids":["healthcare-alm"]}}
+    volumes:
+      - healthcare-alm-open-webui:/app/backend/data
+
+volumes:
+  healthcare-alm-open-webui:

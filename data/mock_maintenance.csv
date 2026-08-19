@@ -1,0 +1,18 @@
+event_id,asset_id,event_date,event_type,description,downtime_days
+M-001,PUMP-001,2025-02-04,corrective,Recurring downstream occlusion alarm,3
+M-002,PUMP-001,2025-09-12,corrective,Unexpected shutdown during self test,5
+M-003,PUMP-001,2026-03-08,corrective,Battery failed capacity test,4
+M-004,PUMP-002,2025-06-02,corrective,Door latch sensor intermittent,2
+M-005,PUMP-002,2026-01-19,corrective,Flow accuracy outside tolerance,3
+M-006,PUMP-004,2025-01-14,corrective,Keypad unresponsive,5
+M-007,PUMP-004,2025-05-22,corrective,Communication error with pump module,4
+M-008,PUMP-004,2026-02-28,corrective,Unexpected reboot,6
+M-009,PUMP-005,2025-07-11,corrective,Channel communication failure,4
+M-010,PUMP-005,2026-04-02,corrective,Battery replacement,2
+M-011,PUMP-007,2025-03-18,corrective,Display reboot loop,6
+M-012,PUMP-007,2025-10-25,corrective,Flow sensor calibration failure,3
+M-013,PUMP-007,2026-05-10,corrective,Alarm speaker below specification,4
+M-014,PUMP-008,2026-02-12,corrective,Preventive battery replacement,1
+M-015,PUMP-009,2025-11-02,corrective,Air in line alarm recurrence,4
+M-016,PUMP-009,2026-06-07,corrective,Air in line sensor replacement,5
+

@@ -1,0 +1,69 @@
+general:
+  telemetry:
+    logging:
+      console:
+        _type: console
+        level: INFO
+
+llms:
+  nemotron_ultra:
+    _type: nim
+    api_key: ${NVIDIA_API_KEY}
+    api_type: chat_completion
+    model_name: ${NVIDIA_MODEL_NAME}
+    base_url: ${NVIDIA_API_BASE_URL}
+    temperature: 0
+    max_tokens: 16384
+    num_retries: 2
+    chat_template_kwargs:
+      force_nonempty_content: true
+
+functions:
+  describe_hospital_database:
+    _type: healthcare_describe_database
+  query_hospital_database:
+    _type: healthcare_query_database
+  search_maude_events:
+    _type: healthcare_search_maude
+  score_retirement_risk:
+    _type: healthcare_score_retirement
+  build_replacement_plan:
+    _type: healthcare_build_replacement_plan
+  agent_sandbox:
+    _type: deep_research_sandbox
+    provider: openshell
+    openshell_image: ${AIQ_OPENSHELL_IMAGE:-aiq-openshell-demo:latest}
+    policy: ${AIQ_OPENSHELL_POLICY_FILE:-configs/openshell/generated/aiq-openshell-policy.yaml}
+    workdir: /workspace
+    network: blocked
+    timeout: 1200
+    idle_timeout: 1800
+    delete_on_exit: true
+    attest: true
+    require_hard_landlock: ${AIQ_OPENSHELL_REQUIRE_HARD_LANDLOCK:-false}
+    artifact_capture:
+      enabled: true
+      max_file_bytes: 50000000
+      allow_extensions: [.png, .csv, .json, .md, .ipynb]
+
+function_groups:
+  regulatory_grounding:
+    _type: mcp_client
+    include: [search_device_recalls]
+    server:
+      transport: stdio
+      command: .venv/bin/healthcare-alm
+      args: [serve-mcp]
+
+workflow:
+  _type: healthcare_alm_deep_agent
+  llm: nemotron_ultra
+  sandbox: agent_sandbox
+  artifact_db_url: sqlite:///output/agent-runs/artifacts.db
+  tools:
+    - describe_hospital_database
+    - query_hospital_database
+    - search_maude_events
+    - regulatory_grounding
+    - score_retirement_risk
+    - build_replacement_plan

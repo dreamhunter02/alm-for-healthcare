@@ -1,0 +1,13 @@
+asset_id,manufacturer,brand_name,model_number,serial_alias,department,manufacture_date,install_date,expected_service_years,acquisition_cost,utilization_hours,pm_compliance_pct,corrective_maintenance_count,days_out_of_service,last_inspection_date,local_malfunction_count,product_code
+PUMP-001,Baxter Healthcare Corporation,Spectrum Infusion Pump,NA,SN-A001,ICU,2012-03-01,2012-09-15,10,24500,48200,82,9,31,2025-12-10,8,FRN
+PUMP-002,Baxter Healthcare Corporation,Spectrum Infusion Pump,NA,SN-A002,Emergency,2014-02-01,2014-06-20,10,24500,44600,86,7,22,2026-02-14,6,FRN
+PUMP-003,Baxter Healthcare Corporation,Spectrum Infusion Pump,NA,SN-A003,Medical-Surgical,2018-01-15,2018-04-10,10,24500,29800,96,2,5,2026-05-11,1,FRN
+PUMP-004,CareFusion Corporation,Alaris PC Unit,8015,SN-B001,ICU,2010-04-12,2010-08-02,10,28500,53800,78,11,42,2025-10-28,9,FRN
+PUMP-005,CareFusion Corporation,Alaris PC Unit,8015,SN-B002,Operating Room,2013-07-01,2013-09-20,10,28500,42100,84,8,24,2026-01-17,7,FRN
+PUMP-006,CareFusion Corporation,Alaris PC Unit,8015,SN-B003,Medical-Surgical,2019-05-01,2019-07-25,10,28500,24500,98,1,2,2026-06-05,1,FRN
+PUMP-007,Hospira Inc.,Plum A+,11971,SN-C001,Emergency,2011-06-15,2011-11-12,10,22000,50100,80,10,36,2025-11-09,8,FRN
+PUMP-008,Hospira Inc.,Plum A+,11973,SN-C002,Medical-Surgical,2016-08-20,2017-01-04,10,22000,33700,91,4,11,2026-03-03,3,FRN
+PUMP-009,Zyno Medical LLC,Z-800 Infusion System,Z-800,SN-D001,ICU,2018-09-01,2019-02-12,8,19500,26100,89,5,15,2026-04-18,4,FRN
+PUMP-010,Zyno Medical LLC,Z-800 Infusion System,Z-800F,SN-D002,Emergency,2020-01-10,2020-05-22,10,19500,19800,94,2,4,2026-06-14,1,FRN
+PUMP-011,B Braun Medical,Infusomat Space,8713050U,SN-E001,Operating Room,2022-02-01,2022-06-12,10,26800,11200,99,0,0,2026-07-03,0,FRN
+PUMP-012,B Braun Medical,Infusomat Space,8713050U,SN-E002,Medical-Surgical,2023-01-14,2023-04-30,10,26800,7800,100,0,0,2026-07-19,0,FRN

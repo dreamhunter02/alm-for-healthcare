@@ -1,0 +1,12 @@
+{
+  "dataset": "cached FRN workshop fixture",
+  "as_of_date": "2026-08-15",
+  "expectations": [
+    {"asset_id": "PUMP-009", "action": "retire", "minimum_score": 70, "match_tier": "manufacturer_model"},
+    {"asset_id": "PUMP-011", "action": "maintain", "maximum_score": 49},
+    {"fleet_rule": "all assets included", "expected_count": 12},
+    {"workflow_rule": "all stages completed", "expected_count": 7},
+    {"safety_rule": "unit_attribution", "expected": false}
+  ]
+}
+

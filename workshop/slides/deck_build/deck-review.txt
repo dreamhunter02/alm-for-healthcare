@@ -1,0 +1,29 @@
+Agents in Healthcare — Technical Workshop Deck Review
+Date: 2026-08-16
+
+Scope
+- 25 editable slides for a 60-minute, highly technical workshop.
+- Speaker notes on every slide; timing totals exactly 60 minutes.
+- Real prototype evidence is used for the Q08 correlation and Q10 Pareto examples.
+
+Round 1 — artifact-tool render
+- Found: cover hierarchy overlap, long titles crossing the divider, stray plus signs in the CLI example, and clipped page numbers.
+- Fixed: rebuilt the cover hierarchy, shortened titles, corrected command text, and moved page numbers inside the safe area.
+
+Round 2 — exported PPTX render
+- Found: slide 20 host/sandbox bullets visually touched at the center.
+- Fixed: narrowed both columns, increased the center gutter, and reduced bullet size.
+- Result: full-deck contact-sheet inspection and individual inspection of the final sandbox/evidence/CTA slides found no remaining overlap, clipping, or unreadable content.
+
+Automated verification
+- PPTX package: 25 slides and 25 speaker-note slides.
+- Presentation overflow test: passed; no overflow detected.
+- Repository tests: 69 passed; one upstream Starlette deprecation warning.
+- Exported render: 25 PNG slides plus contact sheet.
+
+Primary deliverables
+- workshop/Agents_in_Healthcare_ALM_Technical_Workshop.pptx
+- workshop/facilitator_guide.md
+- workshop/slides/deck_build/build_workshop_deck.mjs
+- workshop/slides/deck_build/source-notes.txt
+- workshop/Agents_in_Healthcare_ALM_Technical_Workshop/contact-sheet.png

@@ -1,0 +1,1 @@
+"""Healthcare inventory database utilities."""

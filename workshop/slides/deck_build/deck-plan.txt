@@ -1,0 +1,35 @@
+Communication job
+By the end, a highly technical healthcare/AI audience should understand how to build a query-driven, evidence-grounded medical-device ALM agent because the architecture separates probabilistic reasoning from typed data tools, deterministic policy, sandboxed computation, and human governance.
+
+Narrative arc
+Hospital fleet scale -> fragmented data -> MAUDE semantics and limits -> controlled synthetic data -> query-driven architecture -> code/tool boundaries -> OpenShell execution -> observed evaluation evidence -> live demo and reuse.
+
+25-slide sequence
+01 Title
+02 Workshop contract and technical question
+03 Healthcare ALM operates at fleet scale
+04 Relevant evidence is split across operational systems
+05 The hard problem is identity resolution, not retrieval
+06 MAUDE is a passive post-market signal source
+07 MAUDE records are nested reports, not failure-rate rows
+08 MAUDE cannot establish unit causality or incidence
+09 Synthetic local data gives the workshop controlled ground truth
+10 The mock fleet is small but relationally complete
+11 PUMP-009 shows how evidence types combine without collapsing their meaning
+12 Architecture: query -> one agent -> tools -> sandbox -> evidence
+13 The agent reasons; deterministic components decide policy
+14 The original ALM agents become composable tools
+15 Tool contracts constrain what the model can do
+16 AI-Q configuration wires the agent without replatforming the tools
+17 Read-only SQL keeps local data access inspectable
+18 Regulatory grounding is a separate MCP boundary
+19 The risk formula and budget planner remain authoritative code
+20 Generated code belongs in a sandbox, not the host process
+21 OpenShell creates one attested, network-blocked workspace per run
+22 Q08 proves SQL -> generated Python -> CSV/PNG -> answer
+23 Q10 proves the same path can create a Pareto analysis
+24 Evaluation measures trajectories, safety, numbers, and artifacts
+25 Run it, inspect it, fork it
+
+Visual system
+Codex Grid-inspired: white canvas, black type, pale gray evidence regions, cyan highlight, deep navy technical surfaces. Full-bleed cinematic cover; varied metric, table, timeline, diagram, code, chart, and evidence layouts. Helvetica Neue with Arial fallback.

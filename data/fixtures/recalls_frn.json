@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated.",
+    "last_updated": "2026-08-13",
+    "results": {"skip": 0, "limit": 4, "total": 718}
+  },
+  "results": [
+    {"res_event_number": "56425-A", "event_date_initiated": "2010-08-04", "recalling_firm": "Baxter Healthcare Corp.", "product_description": "Baxter Colleague Single Channel Volumetric Infusion Pumps", "code_info": "Models 2M8151, 2M8161, and 2M9161", "product_code": "FRN", "recall_status": "Terminated", "reason_for_recall": "FDA ordered recall following unresolved deficiencies."},
+    {"res_event_number": "95382", "event_date_initiated": "2024-09-13", "recalling_firm": "Zyno Medical LLC", "product_description": "Z-800 Infusion System, models Z-800, Z-800F, Z-800W, Z-800WF", "code_info": "Z-800 Z-800F Z-800W Z-800WF", "product_code": "FRN", "recall_status": "Open, Classified", "reason_for_recall": "Defect in the air-in-line software algorithm."},
+    {"res_event_number": "56257", "event_date_initiated": "2010-07-13", "recalling_firm": "CareFusion Corporation", "product_description": "CareFusion Alaris PC Unit Model 8015", "code_info": "Model 8015", "product_code": "FRN", "recall_status": "Terminated", "reason_for_recall": "Affected logic boards in Alaris PC units."},
+    {"res_event_number": "59956", "event_date_initiated": "2011-09-16", "recalling_firm": "Hospira Inc.", "product_description": "Plum A+ Single Channel Infusion Pumps", "code_info": "Lists 11971, 11973, 12391, 20679, 20792", "product_code": "FRN", "recall_status": "Terminated", "reason_for_recall": "Continuous recycling or rebooting could delay therapy."}
+  ]
+}

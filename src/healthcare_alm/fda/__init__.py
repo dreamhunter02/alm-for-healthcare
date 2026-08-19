@@ -1,0 +1,1 @@
+"""openFDA ingestion and normalization."""

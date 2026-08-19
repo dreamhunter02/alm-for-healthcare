@@ -1,0 +1,29 @@
+workflow:
+  name: healthcare_device_retirement_planning
+  stages:
+    - maude_ingestion
+    - correlation
+    - risk_scoring
+    - regulatory_grounding
+    - retirement_planning
+    - audit_reporting
+    - verification
+
+defaults:
+  product_code: FRN
+  budget: 120000
+  live_fda: false
+  sandbox_provider: auto
+
+data:
+  inventory: data/mock_inventory.csv
+  maintenance: data/mock_maintenance.csv
+  fixtures: data/fixtures
+
+safety:
+  unit_attribution: false
+  require_source_urls: true
+  disclaimer: >-
+    Public MAUDE reports are signals, not incidence rates, and cannot be
+    attributed to a specific hospital asset.
+

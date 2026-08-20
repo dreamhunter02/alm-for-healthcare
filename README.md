@@ -52,11 +52,10 @@ Setup pins AI-Q `v2.2.0-rc3`, verifies its archive checksum, installs OpenShell 
 CLI query:
 
 ```bash
-.venv/bin/python scripts/run_with_env.py \
-  .venv/bin/nat run \
-  --config_file configs/config_aiq_agent.yml \
-  --input "With a $50,000 budget, which pumps should we replace first?"
+./scripts/runq Q09
 ```
+
+`runq` accepts any eval ID from `Q01` through `Q10`, or a quoted question. After the answer, it prints the tools, artifacts, and `run.json` path used for the audit trace.
 
 Browser chat:
 

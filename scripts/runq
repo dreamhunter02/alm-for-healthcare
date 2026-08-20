@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if [[ ! -x "$repo_dir/.venv/bin/python" ]]; then
+  echo "runq: missing .venv; follow the setup steps in README.md first" >&2
+  exit 2
+fi
+
+exec "$repo_dir/.venv/bin/python" "$repo_dir/scripts/runq.py" "$@"
